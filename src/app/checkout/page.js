@@ -28,7 +28,7 @@ export default function Checkout() {
   const router = useRouter();
   const params = useSearchParams();
 
-  const publishableKey = process.env.PUBLIC_STRIPE_API;
+  const publishableKey = String(process.env.PUBLIC_STRIPE_API);
 
   const stripePromise = loadStripe(publishableKey);
 

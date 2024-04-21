@@ -2,7 +2,8 @@ import AuthUser from "@/middleware/AuthUser";
 import { NextResponse } from "next/server";
 import dotenv from "dotenv";
 dotenv.config();
-const stripe = require('stripe')(process.env.STRIPE_API_KEY);
+const stripe = require('stripe')(String(process.env.STRIPE_API_KEY));
+
 
 export const dynamic = "force-dynamic";
 
