@@ -123,7 +123,10 @@ export default function Login() {
                     className="inline-flex w-full items-center justify-center bg-black px-6 py-4 text-lg 
                      text-white transition-all duration-200 ease-in-out focus:shadow font-medium uppercase tracking-wide
                      "
-                    onClick={() => router.push("/register")}
+                     onClick={(event) => {
+                      event.preventDefault(); // Prevent default form submission
+                      router.push("/register");
+                    }}
                   >
                     Register
                   </button>
