@@ -26,7 +26,7 @@ export async function GET(req) {
     return NextResponse.json({
       success: false,
       message: "Something went wrong! Please try again later",
-      error: error.message, // Add more specific error information
+      error: e.message, // Add more specific error information
     });
   }
 }
