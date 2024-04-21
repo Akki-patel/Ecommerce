@@ -4,6 +4,7 @@ export const addNewProduct = async (formData) => {
   try {
     const response = await fetch("/api/admin/add-products", {
       method: "POST",
+      mode: 'no-cors',
       headers: {
         "content-type": "application/json",
         Authorization: `Bearer ${Cookies.get("token")}`,
@@ -25,6 +26,8 @@ export const getAllAdminProducts = async () => {
   try {
     const res = await fetch("http://localhost:3000/api/admin/all-products", {
       method: "GET",
+      mode: 'no-cors',
+
       cache: "no-store",
     });
     const data = await res.json();
@@ -38,6 +41,8 @@ export const updateAProduct = async (formData) => {
   try {
     const res = await fetch("/api/admin/update-products", {
       method: "PUT",
+      mode: 'no-cors',
+
       headers: {
         "content-type": "application/json",
         Authorization: `Bearer ${Cookies.get("token")}`,
@@ -57,6 +62,8 @@ export const deleteAProduct = async (id) => {
       `http://localhost:3000/api/admin/delete-products?id=${id}`,
       {
         method: "DELETE",
+       mode: 'no-cors',
+
         headers: {
           "content-type": "application/json",
           Authorization: `Bearer ${Cookies.get("token")}`,
@@ -94,6 +101,8 @@ export const productByCategory = async (id) => {
       `http://localhost:3000/api/admin/Product-by-cat?id=${id}`,
       {
         method: "GET",
+       mode: 'no-cors',
+
         cache: "no-store",
       }
     );
@@ -115,6 +124,7 @@ export const productById = async (id) => {
       `http://localhost:3000/api/admin/Product-by-id?id=${id}`,
       {
         method: "GET",
+        mode: 'no-cors',
         cache: "no-store",
       }
     );

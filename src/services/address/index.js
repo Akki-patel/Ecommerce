@@ -40,6 +40,7 @@ export const updateAddress = async (formData) => {
   try {
     const res = await fetch("/api/Address/update-address", {
       method: "PUT",
+      mode: 'no-cors',
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${Cookies.get("token")}`,

@@ -2,6 +2,8 @@ export const registerNewUser = async (formData) => {
   try {
     const response = await fetch("/api/register", {
       method: "POST",
+      mode: 'no-cors',
+
       headers: {
         "content-type": "application/json",
       },

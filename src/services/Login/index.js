@@ -2,6 +2,7 @@ export const login = async (formData) => {
     try {
       const response = await fetch("/api/login", {
         method: "POST",
+        mode: 'no-cors',
         headers: {
           "content-type": "application/json",
         },

@@ -4,6 +4,7 @@ export const callStripeSession = async (formData) => {
   try {
     const res = await fetch("/api/stripe", {
       method: "POST",
+      mode: 'no-cors',
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${Cookies.get("token")}`,
